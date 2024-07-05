@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Dashboard</h1>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            &#9776;
+        </button>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Reports</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container">
+            <div class="item text">
+                <h2>Text Title</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at scelerisque odio, non suscipit sapien. Proin non sapien malesuada, lobortis mauris non, tincidunt nulla. Integer vitae mauris orci. Maecenas at risus sit amet felis blandit fermentum. Duis viverra diam at velit facilisis, id tincidunt massa fermentum. Nulla facilisi. Integer sit amet vehicula velit, et dignissim turpis.</p>
+
+            </div>
+            <div class="item video">
+                <h2>Video Title</h2>
+                <video controls>
+                    <source src="Rallying In BeamNG Is Better Than You Think.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus. Donec facilisis fermentum sem, ac viverra ante luctus vel. Donec vel mauris quam. </p>
+            </div>
+            <div class="item image">
+                <h2>Image Title</h2>
+                <img src="ezgif.com-animated-gif-maker (8).gif" alt="Description of image">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor libero vel risus tempus, a hendrerit purus vulputate. Fusce sit amet orci justo.</p>
+
+            </div>
+            <div class="item chart">
+                <h2>Interactive Chart</h2>
+                <div class="chart-container">
+                    <canvas id="myChart"></canvas>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
+
+            </div>
+            <div class="item table">
+                <h2>Data Table</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Column 1</th>
+                            <th>Column 2</th>
+                            <th>Column 3</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Data 1</td>
+                            <td>Data 2</td>
+                            <td>Data 3</td>
+                        </tr>
+                        <tr>
+                            <td>Data 4</td>
+                            <td>Data 5</td>
+                            <td>Data 6</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+            </div>
+
+            <div class="item tooltip">
+                <h2>Tooltip Example</h2>
+                <p data-tooltip="More info about this text">Hover over this text to see a tooltip.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navUl = document.querySelector('nav ul');
+
+            navToggle.addEventListener('click', function () {
+                navUl.classList.toggle('showing');
+            });
+        });
+
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
